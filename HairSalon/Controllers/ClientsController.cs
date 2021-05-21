@@ -36,6 +36,7 @@ namespace ClairesHairCare.Controllers
       return RedirectToAction("Index");
     }
 
+
     public ActionResult Details(int id)
     {
       Client thisClient = _db.Client.FirstOrDefault(client => client.ClientId == id);
