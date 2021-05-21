@@ -20,5 +20,18 @@ namespace ClairesHairCare.Controllers
       List<Stylist> model = _db.Stylists.ToList();
       return View(model);
     }
+
+    public ActionbResult Create()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public ActioinResult Create(Stylist stylist)
+    {
+      _db.Stylist.Add(stylist);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
