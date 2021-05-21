@@ -34,6 +34,12 @@ namespace ClairesHairCare.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
-    
+
+    public ActionResult Details(int id)
+    {
+      Client thisClient = _db.Client.FirstOrDefault(ClientsController => client.ClientId == id);
+      return View(thisClient);
+    }
+
   }
 }
