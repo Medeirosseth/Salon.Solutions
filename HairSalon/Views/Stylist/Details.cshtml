@@ -2,17 +2,17 @@
   Layout = "_Layout";
 }
 
-@using ClairesHairCare
-@using ClairesHairCare.Models.Stylist
+@using ClairesHairCare.Models
+@model ClairesHairCare.Models.Stylist
 
 <h2>Stylist Details</h2>
 <hr />
 <h3>Name: @Html.DisplayFor(model => model.StylistName)</h3>
 
 <ul>
-  @foreach (Client client in model.Clients)
+  @foreach (Client client in Model.Clients)
   {
-    <li>@Html.ActionLink($"{Clients.ClientsName}", "Details", "Stylists", new { id = client.ClientId})</li>
+    <li>@Html.ActionLink($"{client.ClientName}", "Details", "Stylists", new { id = client.ClientId})</li>
   }
 </ul>
 

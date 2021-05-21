@@ -17,7 +17,7 @@ namespace ClairesHairCare.Controllers
     }
     public ActionResult Index()
     {
-      List<Stylist> model = _db.Stylists.ToList();
+      List<Stylist> model = _db.Stylist.ToList();
       return View(model);
     }
 
@@ -37,7 +37,7 @@ namespace ClairesHairCare.Controllers
     public ActionResult Details(int id)
     {
       Stylist thisStylist = _db.Stylist.FirstOrDefault(stylist => stylist.StylistId == id);
-      thisStylist.Clients = _db.Clients.Where(client => client.ClientId == id).ToList();
+      thisStylist.Clients = _db.Client.Where(client => client.ClientId == id).ToList();
       return View(thisStylist);
     }
 
@@ -49,7 +49,7 @@ namespace ClairesHairCare.Controllers
 
     public ActionResult Delete(int id)
     {
-      Stylist thisStylist = _db.Stylsit.FirstOrDefault(Stylist => Stylist.StylistId == id);
+      Stylist thisStylist = _db.Stylist.FirstOrDefault(Stylist => Stylist.StylistId == id);
       return View(thisStylist);
     }
 
@@ -57,7 +57,7 @@ namespace ClairesHairCare.Controllers
 
     public ActionResult DeleteConfirmed(int id)
     {
-      Stylist thisStylist = _db.Stylists.FirstOrDefault(Stylist => Stylist.StylistId == id);
+      Stylist thisStylist = _db.Stylist.FirstOrDefault(Stylist => Stylist.StylistId == id);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

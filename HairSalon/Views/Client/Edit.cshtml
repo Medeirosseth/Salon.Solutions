@@ -11,13 +11,13 @@
   @Html.LabelFor(model => model.ClientName)
   @Html.EditorFor(model => model.ClientName)
 
-  @Html.LableFor(model => model.Description)
+  @Html.LabelFor(model => model.Description)
   @Html.EditorFor(model => model.Description)
 
   @Html.LabelFor(model => model.Appointment)
   @Html.EditorFor(model => model.Appointment)
 
-  @Html.LabelFor(ModelExpressionProvider => model.Stylist)
+  @Html.LabelFor(model => model.Stylist)
   @Html.DropDownList("StylistId")
 
   <input type="submit" value="Save" />

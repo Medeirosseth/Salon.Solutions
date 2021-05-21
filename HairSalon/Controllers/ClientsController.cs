@@ -18,33 +18,33 @@ namespace ClairesHairCare.Controllers
 
     public ActionResult Index()
     {
-      List<Client> listOfClients = _db.Clients.Include(client => client.Stylist).ToList();
+      List<Client> listOfClients = _db.Client.Include(client => client.Stylist).ToList();
       return View(listOfClients);
     }
 
     public ActionResult Create()
     {
-      ViewBag.StylistId = new SelectList(_db.Sylists, "StylistId", "StylistName");
+      ViewBag.StylistId = new SelectList(_db.Stylist, "StylistId", "StylistName");
       return View();
     }
 
     [HttpPost]
     public ActionResult Create(Client client)
     {
-      _db.Clients.Add(client);
+      _db.Client.Add(client);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-      Client thisClient = _db.Clients.FirstOrDefault(ClientsController => client.ClientId == id);
+      Client thisClient = _db.Client.FirstOrDefault(client => client.ClientId == id);
       return View(thisClient);
     }
 
     public ActionResult Edit(int id)
     {
-      Client thisClient = _db.Clients.FirstOrDefault(ClientsController => client.ClientId == id);
+      Client thisClient = _db.Client.FirstOrDefault(client => client.ClientId == id);
       ViewBag.StylistId = new SelectList(_db.Stylist, "StylistId", "StylistName");
       return View(thisClient);
     }
