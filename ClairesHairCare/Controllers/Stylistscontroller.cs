@@ -21,13 +21,13 @@ namespace ClairesHairCare.Controllers
       return View(model);
     }
 
-    public ActionbResult Create()
+    public ActionResult Create()
     {
       return View();
     }
 
     [HttpPost]
-    public ActioinResult Create(Stylist stylist)
+    public ActionResult Create(Stylist stylist)
     {
       _db.Stylist.Add(stylist);
       _db.SaveChanges();

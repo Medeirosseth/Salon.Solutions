@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,7 +66,7 @@ namespace ClairesHairCare.Controllers
 
     [HttpPost, ActionName("Delete")]
 
-    public ActioinResult DeleteConfirmed(int id)
+    public ActionResult DeleteConfirmed(int id)
     {
       Client thisClient = _db.Client.FirstOrDefault(client => client.ClientId == id);
       _db.Client.Remove(thisClient);
