@@ -9,7 +9,6 @@
 {
   <h3>No Clients have been added to this Stylist</h3>
 }
-
 @foreach (Client client in Model)
 {
   <li>@Html.ActionLink($"{client.ClientName}", "Details", new {id = client.ClientId}) | @client.Stylist.StylistName</li>
