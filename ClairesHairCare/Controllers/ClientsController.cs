@@ -48,5 +48,29 @@ namespace ClairesHairCare.Controllers
       return View(thisClient);
     }
 
+    [HttpPost]
+
+    public ActionResult Edit(Client client)
+    {
+      _db.Entry(client).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult Delete(int id)
+    {
+      Client thisClient = _db.Client.FirstOrDefault(client => client.ClientId == id);
+      return View(thisClient);
+    }
+
+    [HttpPost, ActionName("Delete")]
+
+    public ActioinResult DeleteConfirmed(int id)
+    {
+      Client thisClient = _db.Client.FirstOrDefault(client => client.ClientId == id);
+      _db.Client.Remove(thisClient);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
