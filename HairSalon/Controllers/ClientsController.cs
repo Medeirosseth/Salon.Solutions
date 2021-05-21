@@ -28,6 +28,7 @@ namespace ClairesHairCare.Controllers
       return View();
     }
 
+
     [HttpPost]
     public ActionResult Create(Client client)
     {
