@@ -2,6 +2,8 @@
 
 #### By _**:neckbeard:Seth Medeiros**_
 
+![Image of 80s salonposter](https://www.photomagnets.com/signsalonwoman.jpg)
+
 ## Technologies Used
 
 - _C#_
