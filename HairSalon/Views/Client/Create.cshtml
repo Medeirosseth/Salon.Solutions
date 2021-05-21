@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+
+@model ClairesHairCare.Models.Client
+
+<h4>Add Client to the directory</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.ClientName)
+  @Html.TextBoxFor(model => model.ClientName)
+
+  @Html.LabelFor(model => model.Description)
+  @Html.TextBoxFor(model => model.Description)
+
+  @Html.LabelFor(model => model.Appointment)
+  @Html.TextBoxFor(model => model.Appointment)
+
+  @Html.DropDownList("CuisineId")
+  <input type="submit" value="add new client" />
+}
+
+<p>@Html.ActionLink("Show all Clients", "Index")</p>
