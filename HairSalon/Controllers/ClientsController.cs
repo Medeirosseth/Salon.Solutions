@@ -18,7 +18,7 @@ namespace ClairesHairCare.Controllers
 
     public ActionResult Index()
     {
-      List<Client> listOfClients = _db.Client.Include(client => client.Stylist).ToList();
+      List<Client> listOfClients = _db.Clients.Include(client => client.Stylist).ToList();
       return View(listOfClients);
     }
 
@@ -31,7 +31,7 @@ namespace ClairesHairCare.Controllers
     [HttpPost]
     public ActionResult Create(Client client)
     {
-      _db.Client.Add(client);
+      _db.Clients.Add(client);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
@@ -39,13 +39,13 @@ namespace ClairesHairCare.Controllers
 
     public ActionResult Details(int id)
     {
-      Client thisClient = _db.Client.FirstOrDefault(client => client.ClientId == id);
+      Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
       return View(thisClient);
     }
 
     public ActionResult Edit(int id)
     {
-      Client thisClient = _db.Client.FirstOrDefault(client => client.ClientId == id);
+      Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
       ViewBag.StylistId = new SelectList(_db.Stylist, "StylistId", "StylistName");
       return View(thisClient);
     }
@@ -61,7 +61,7 @@ namespace ClairesHairCare.Controllers
 
     public ActionResult Delete(int id)
     {
-      Client thisClient = _db.Client.FirstOrDefault(client => client.ClientId == id);
+      Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
       return View(thisClient);
     }
 
@@ -69,8 +69,8 @@ namespace ClairesHairCare.Controllers
 
     public ActionResult DeleteConfirmed(int id)
     {
-      Client thisClient = _db.Client.FirstOrDefault(client => client.ClientId == id);
-      _db.Client.Remove(thisClient);
+      Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+      _db.Clients.Remove(thisClient);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

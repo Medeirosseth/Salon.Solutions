@@ -37,7 +37,7 @@ namespace ClairesHairCare.Controllers
     public ActionResult Details(int id)
     {
       Stylist thisStylist = _db.Stylist.FirstOrDefault(stylist => stylist.StylistId == id);
-      thisStylist.Clients = _db.Client.Where(client => client.ClientId == id).ToList();
+      thisStylist.Clients = _db.Clients.Where(client => client.ClientId == id).ToList();
       return View(thisStylist);
     }
 
