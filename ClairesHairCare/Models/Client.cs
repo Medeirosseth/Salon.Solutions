@@ -10,6 +10,6 @@ namespace WeekThreeTemplate.Models
     public string Description { get; set; }
 
     public string Appointment { get; set; }
-    public virtual TemplateCategory TemplateCategory { get; set; }
+    public virtual Stylist Stylist { get; set; }
   }
 }

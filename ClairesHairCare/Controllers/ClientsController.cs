@@ -20,5 +20,20 @@ namespace ClairesHairCare.Controllers
       List<Client> listOfClients = _db.Clients.Include(client => client.Stylist).ToList();
       return View(listOfClients);
     }
+
+    public ActionResult Create()
+    {
+      ViewBag.StylistId = new SelectList(_db.Sylists, "StylistId", "StylistName");
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Client client)
+    {
+      _db.Clients.Add(client);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+    
   }
 }
