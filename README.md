@@ -16,7 +16,7 @@
 
 _This is a web application that lets you create Stylists and Clients and then declare which Client goes to which Stylist_
 
-![Salon Tables](SalonTables.png)
+![ScreenShot](/SalonTables.png)
 
 <details>
   <summary>Setup/installation Requirements:open_file_folder:</summary>
