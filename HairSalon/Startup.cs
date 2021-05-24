@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using ClairesHairCare.Models;
 
-namespace WeekThreeTemplate
+namespace ClairesHairCare
 {
   public class Startup
   {
