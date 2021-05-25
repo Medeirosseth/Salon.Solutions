@@ -1,3 +1,14 @@
+@font-face {
+  font-family: "Lamina";
+  src: url("Lamina.ttf") format("tff");
+}
+
+html,
+body,
+* {
+  font-family: "Lamina", "Times New Roman", Times, serif;
+}
+
 div#footer {
   position: fixed;
   bottom: 0px;

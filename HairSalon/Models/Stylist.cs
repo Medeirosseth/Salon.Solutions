@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace ClairesHairCare.Models
 {
@@ -10,6 +11,7 @@ namespace ClairesHairCare.Models
     }
 
     public int StylistId { get; set; }
+    [Required]
     public string StylistName { get; set; }
     public virtual ICollection<Client> Clients { get; set; }
   }

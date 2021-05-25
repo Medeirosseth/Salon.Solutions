@@ -18,8 +18,8 @@ namespace ClairesHairCare.Controllers
 
     public ActionResult Index()
     {
-      List<Client> listOfClients = _db.Clients.Include(client => client.Stylist).ToList();
-      return View(listOfClients);
+      List<Client> model = _db.Clients.Include(client => client.Stylist).ToList();
+      return View(model);
     }
 
     public ActionResult Create()

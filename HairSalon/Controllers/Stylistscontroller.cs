@@ -57,6 +57,7 @@ namespace ClairesHairCare.Controllers
     public ActionResult DeleteConfirmed(int id)
     {
       Stylist thisStylist = _db.Stylist.FirstOrDefault(Stylist => Stylist.StylistId == id);
+      _db.Stylist.Remove(thisStylist);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
