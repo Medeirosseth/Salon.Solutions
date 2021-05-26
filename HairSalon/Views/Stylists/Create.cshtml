@@ -4,13 +4,13 @@
 
 @model ClairesHairCare.Models.Stylist
 
-<h4>Add new Stylist</h4>
-
+<h1>Add new Stylist</h1>
+<div class="container">
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.StylistName)
-  @Html.TextBoxFor(model => model.StylistName)
-  <input type="submit" value="Add new Stylist" />
+  @Html.TextBoxFor(model => model.StylistName, "text", new { @required = "required" })
+  <input type="submit" value="Add new Stylist"/>
 }
-
+</div>
 <p>@Html.ActionLink("Show all Stylists", "Index")</p>

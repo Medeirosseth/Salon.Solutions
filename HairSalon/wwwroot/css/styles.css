@@ -3,11 +3,47 @@
   src: url("Lamina.ttf") format("tff");
 }
 
+a {
+  color: grey;
+  text-align: center;
+}
+
+a:hover {
+  font-size: larger;
+  font-weight: bolder;
+  color: goldenrod;
+}
+
+p,
+h1 {
+  text-align: center;
+}
+
+p :hover {
+  color: goldenrod;
+}
+
+img {
+  width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+li {
+  text-align: center;
+  list-style-type: none;
+  color: goldenrod;
+}
+
+.title {
+  text-align: center;
+}
+
 html,
 body,
 * {
   font-family: "Lamina", "Times New Roman", Times, serif;
-  background-image: url(http://2.bp.blogspot.com/-72Pacb9vsX8/Te-9yCMcdHI/AAAAAAAABWE/PfmAGCWBtOI/s1600/hair4.jpg);
 }
 
 div#footer {
@@ -18,4 +54,8 @@ div#footer {
   color: #ccc;
   background: #333;
   padding: 8px;
+}
+
+.container {
+  text-align: center;
 }

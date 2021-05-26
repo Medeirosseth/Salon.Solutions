@@ -5,6 +5,7 @@
 @model ClairesHairCare.Models.Client
 
 <h4>Add Client to the directory</h4>
+<img alt="80s salon poster" src="~/css/ClairesSalon.jpg">
 
 @using (Html.BeginForm())
 {
@@ -14,8 +15,8 @@
   @Html.LabelFor(model => model.Description)
   @Html.TextBoxFor(model => model.Description)
 
-  @Html.LabelFor(model => model.Appointment)
-  @Html.TextBoxFor(model => model.Appointment)
+    @Html.LabelFor(model => model.Appointment)
+        @Html.TextBoxFor(model => model.Appointment, new { @type = "date", @required="required" })
 
   @Html.DropDownList("StylistId")
   <input type="submit" value="add new client" />

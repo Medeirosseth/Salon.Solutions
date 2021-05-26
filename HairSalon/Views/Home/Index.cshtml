@@ -1,11 +1,14 @@
 @{
   Layout = "_Layout";
 }
-<body id="bodyImg">
-<link rel="stylesheet" href="~/css/styles.css">
-<h1> Welcom to Claires Salon</h1>
-<p>@Html.ActionLink("Stylists", "Index", "Stylists")</p>
-<p>@Html.ActionLink("Clients", "Index", "Clients")</p>
+<div>
+<h1 class="title">Claires Hair Care</h1>
+<img alt="80s salon poster" src="~/css/ClairesSalon.jpg">
+<p>
+  @Html.ActionLink("Stylists", "Index", "Stylists") &nbsp;&nbsp;&nbsp;&nbsp;
+  @Html.ActionLink("Clients", "Index", "Clients")
+</p>
+<h3 class="title"> Where we care about hair</h3>
 
 
 
@@ -14,5 +17,4 @@
 
 
 
-
-</body>
+</div>
