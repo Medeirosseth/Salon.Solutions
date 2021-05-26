@@ -14,7 +14,7 @@ namespace ClairesHairCare.Models
     [Required]
     public string Description { get; set; }
 
-    public DateTime Appointment { get; set; }
+    public string Appointment { get; set; }
     public virtual Stylist Stylist { get; set; }
   }
 }
